@@ -5,7 +5,7 @@ export default function InformationBox ({ title, info, text, width }) {
         <strong className='text-base font-medium text-[#685DC5]'>{title}</strong>
         <strong className='text-2xl font-light text-[#535353]'>{info}</strong>
       </div>
-      <hr className="w-[50px] h-[1px] border-0 bg-[#DADADA]" />
+      <hr className="w-[30px] h-[1px] border-0 bg-[#DADADA]" />
       <p className='text-base font-light text-[#535353]'>{text}</p>
     </div>
   )
