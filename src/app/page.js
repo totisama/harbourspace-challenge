@@ -1,7 +1,9 @@
+import FirstSection from './components/FirstSection'
+
 export default function Home () {
   return (
-    <main>
-      Main
+    <main className="flex flex-col justify-center items-center">
+      <FirstSection />
     </main>
   )
 }
