@@ -1,8 +1,9 @@
 import Image from 'next/image'
+import Section from './Section'
 
 export default function FirstSection () {
   return (
-    <section className="w-full px-6 flex justify-evenly md:px-0 sm:max-w-6xl pt-32 pb-24">
+    <Section>
       {/* left info start */}
       <div className="relative w-full flex flex-col gap-10 md:w-2/5">
         <h1 className="text-5xl text-[#685dc5] font-medium">Interaction Design Apprenticeship</h1>
@@ -129,6 +130,6 @@ export default function FirstSection () {
         <div className="absolute h-[220px] w-[560px] -bottom-10 -right-56 -z-1 bg-[url('/backgroundPattern.svg')] bg-no-repeat hidden md:block"></div>
       </div>
       {/* right info end */}
-    </section>
+    </Section>
   )
 }
