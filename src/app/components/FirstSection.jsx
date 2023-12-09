@@ -21,7 +21,7 @@ export default function FirstSection () {
             </div>
             <Image
               className='h-20 w-20'
-              src="/zeptolab.svg"
+              src="/svgs/zeptolab.svg"
               alt="Zeptolab logo"
               width={100}
               height={24}
@@ -74,7 +74,7 @@ export default function FirstSection () {
         </div>
         <Image
           className='absolute h-56 w-56 -top-32 right-0 rotate-12 md:-top-20 sm:right-52 md:right-0'
-          src="/interactionDesign.svg"
+          src="/svgs/interactionDesign.svg"
           alt="Interaction Design image"
           width={100}
           height={24}
@@ -86,7 +86,7 @@ export default function FirstSection () {
         <div className='flex gap-x-10'>
           <Image
             className='h-20 w-20'
-            src="/zeptolab.svg"
+            src="/svgs/zeptolab.svg"
             alt="Zeptolab logo"
             width={100}
             height={24}
@@ -127,7 +127,7 @@ export default function FirstSection () {
             </div>
           </div>
         </div>
-        <div className="absolute h-[220px] w-[560px] -bottom-10 -right-56 -z-1 bg-[url('/backgroundPattern.svg')] bg-no-repeat hidden md:block"></div>
+        <div className="absolute h-[220px] w-[560px] -bottom-10 -right-56 -z-1 bg-[url('/svgs/backgroundPattern.svg')] bg-no-repeat hidden md:block"></div>
       </div>
       {/* right info end */}
     </Section>
