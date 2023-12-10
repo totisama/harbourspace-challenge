@@ -24,10 +24,10 @@ export default function AboutSection () {
           <p className='font-light text-[22px] text-[#535353]'>Our scholarships are designed to give talented and driven young people from any background access to top-class education, experience and network. We offer a fully-funded master’s degree alongside an apprenticeship and a guaranteed job upon graduation.</p>
         </div>
       </div>
-      <div className='w-full flex mt-20 gap-10'>
+      <div className='w-full flex flex-col md:flex-row mt-10 md:mt-20 gap-10'>
 
         {/* left */}
-        <div className='w-1/3 border flex flex-col border-[#DADADA] justify-end rounded pt-5 pb-10 px-10 gap-y-7'>
+        <div className='w-1/3 border hidden flex-col border-[#DADADA] justify-end rounded pt-5 pb-10 px-10 gap-y-7 md:flex'>
           <div className='flex flex-col mb-40 gap-y-5'>
             <strong className='text-base font-medium text-[#685DC5]'>Scholarship value</strong>
             <strong className='text-5xl font-light text-[#535353]'>€31,300</strong>
@@ -42,25 +42,38 @@ export default function AboutSection () {
           </div>
         </div>
 
+        {/* <md only */}
+        <div className='flex flex-col gap-y-5 items-baseline pl-10 md:hidden'>
+          <div className='flex flex-col'>
+            <strong className='text-base font-medium text-[#685DC5]'>Fellowship value</strong>
+            <strong className='text-2xl font-light text-[#535353]'>€31,300</strong>
+          </div>
+          <div className='flex gap-10'>
+            <PairedInformation title='Tuition' text='€22,900' textSize='text-2xl' />
+            <PairedInformation title='Remaining' text='€8,400' textSize='text-2xl' />
+          </div>
+          <PairedInformation title='Living stipend' text='€8,400 (€700/month)' textSize='text-2xl' />
+        </div>
+
         {/* right */}
-        <div className='flex flex-col w-2/3 gap-y-5'>
+        <div className='flex flex-col w-full md:w-2/3 gap-y-5'>
           {/* top */}
-          <div className='w-full flex gap-10'>
+          <div className='w-full flex flex-col md:flex-row gap-10'>
             <InformationBox
               title='Study commitment'
               info='3 hours / day'
               text='You will complete 15 modules to graduate. Daily classes are 3 hours, plus coursework to complete in your own time.'
-              width='w-1/2'
+              width='w-full md:w-1/2'
             />
             <InformationBox
               title='Work commitment'
               info='4 hours / day'
               text='Immerse yourself in the professional world during your apprenticeship. You’ll learn the ropes from the best and get to apply your newly acquired knowledge in the field from day one.'
-              width='w-1/2'
+              width='w-full md:w-1/2'
             />
           </div>
           {/* center line */}
-          <div className='flex items-center'>
+          <div className='flex items-center w-full md:w-full'>
             <hr className="w-full h-[1px] mx-auto border-0 bg-[#DADADA]" />
             <strong className='font-medium text-base text-[#535353] px-6'>GRADUATION</strong>
             <hr className="w-full h-[1px] mx-auto border-0 bg-[#DADADA]" />
@@ -70,7 +83,7 @@ export default function AboutSection () {
             title='A full-time contract'
             info='1 Year / Full-Time'
             text='You’ll be guaranteed a 1 year contract with SCG upon graduation.'
-            width='w-full'
+            width='w-full md:w-full'
           />
         </div>
         {/* right */}
