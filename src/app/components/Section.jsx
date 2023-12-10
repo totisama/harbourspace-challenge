@@ -1,6 +1,6 @@
-export default function Section ({ children }) {
+export default function Section ({ children, flexDirection = 'flex-row', paddingX = '' }) {
   return (
-    <section className="w-full px-6 flex justify-evenly md:px-0 sm:max-w-6xl pt-32 pb-24">
+    <section className={`w-full flex ${flexDirection} justify-evenly ${paddingX} pt-32 sm:max-w-6xl`}>
       {children}
     </section>
   )
