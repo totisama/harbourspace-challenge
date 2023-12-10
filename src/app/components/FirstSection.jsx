@@ -4,7 +4,7 @@ import PairedInformation from './PairedInformation'
 
 export default function FirstSection () {
   return (
-    <Section flexRow={true}>
+    <Section>
       {/* left info start */}
       <div className="relative w-full flex flex-col gap-10 md:w-2/5">
         <h1 className="text-5xl text-[#685dc5] font-medium">Interaction Design Apprenticeship</h1>

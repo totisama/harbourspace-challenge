@@ -5,7 +5,7 @@ import PairedInformation from './PairedInformation'
 
 export default function AboutSection () {
   return (
-    <Section flexRow={false}>
+    <Section flexDirection='flex-col'>
       <div className="w-11/12 flex flex-col items-center gap-10 lg:gap-32 lg:flex-row">
         <div className='flex'>
           <div className="flex justify-center items-center h-[438px] w-[438px] bg-[url('/svgs/circularPattern.svg')] bg-no-repeat">
