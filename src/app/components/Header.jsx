@@ -11,7 +11,7 @@ export default function Header () {
       </h2>
       <Image
         className='h-12 w-12'
-        src="/menu.svg"
+        src="/svgs/menu.svg"
         alt="Menu icon"
         width={100}
         height={24}
