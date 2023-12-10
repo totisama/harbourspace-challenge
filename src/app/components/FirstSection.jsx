@@ -106,7 +106,8 @@ export default function FirstSection () {
             <PairedInformation title='End date' text='3 Aug 2020' width='w-48' />
           </div>
         </div>
-        <div className="absolute h-[220px] w-[560px] -bottom-10 -right-56 -z-1 bg-[url('/svgs/backgroundPattern.svg')] bg-no-repeat hidden md:block"></div>
+        {/* WIP: fix problem when changing resolution */}
+        <div className="absolute h-[220px] w-[560px] -bottom-10 -right-56 -z-1 bg-[url('/svgs/backgroundPattern.svg')] bg-no-repeat hidden lg:block"></div>
       </div>
       {/* right info end */}
     </Section>
