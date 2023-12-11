@@ -87,7 +87,7 @@ export const QUESTIONS = [
   },
   {
     type: 'Apprenticeship conditions',
-    question: 'Will I get aa visa?',
+    question: 'Will I get a visa?',
     answer: [
       {
         type: 'paragraph',
