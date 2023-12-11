@@ -116,3 +116,9 @@ export const QUESTIONS = [
     ]
   }
 ]
+
+export const ITEM_MARGIN_RIGTH = 40
+
+export const MOVING_RATE = 10
+
+export const SLIDER_START = 10
