@@ -13,7 +13,7 @@ export default function FaqQuestion ({ question }) {
         {({ open }) => (
           <div className='flex justify-between'>
             <strong className='hidden text-[22px] text-[#685DC5] w-[300px] font-medium md:block'>{question.type}</strong>
-            <div className='flex flex-col gap-y-5 w-1/2'>
+            <div className='flex flex-col gap-y-5 w-4/5 md:w-1/2'>
               <h2 className='text-xl text-[#535353] font-medium'>{question.question}</h2>
               <Disclosure.Panel as='div'>
                 <div className='flex flex-col gap-y-5'>
