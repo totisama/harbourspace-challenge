@@ -117,6 +117,14 @@ export const QUESTIONS = [
   }
 ]
 
+export const FILTERS_NAME = [
+  'All',
+  'Admissions',
+  'Harbour.Space',
+  'SCG',
+  'Living in Bangkok'
+]
+
 export const ITEM_MARGIN_RIGTH = 40
 
 export const MOVING_RATE = 10
