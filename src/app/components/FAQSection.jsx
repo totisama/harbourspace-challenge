@@ -11,7 +11,7 @@ export default function FAQSection () {
           <label className='flex text-[#6A6A6A] font-light text-base'>Filter by:</label>
           <button className='w-full flex justify-between items-center border border-[#DADADA] py-4 px-4 text-[#685DC5] rounded-[20px] gap-x-5 sm:py-2 sm:w-auto'>
             Program conditions
-            <img className='' src='/svgs/arrow.svg' />
+            <img className='' src='/svgs/arrowBottom.svg' />
           </button>
         </div>
       </div>

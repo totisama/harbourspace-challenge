@@ -92,11 +92,11 @@ export default function FirstSection () {
             </strong>
           </div>
         </div>
-        <div className='border border-[#DADADA] bg-white rounded px-10 py-5 flex flex-col gap-y-1'>
+        <div className='border border-[#DADADA] bg-white rounded px-5 py-5 flex flex-col gap-y-1'>
           <strong className='text-[#685DC5] font-medium text-lg'>Application closes in</strong>
           <strong className='text-[#535353] font-light text-[27px]'>6 Day  :  22 Hrs  :  56 Min  :  13 Seg</strong>
         </div>
-        <div className='border border-[#DADADA] bg-white rounded px-10 py-10 flex flex-col z-10'>
+        <div className='border border-[#DADADA] bg-white rounded px-5 py-10 flex flex-col z-10'>
           <div className='flex justify-between'>
             <PairedInformation title='Location' text='Bangkok' width='w-48' />
             <PairedInformation title='Duration' text='1 year' width='w-48' extra={true} extraText='Full-Time' />
@@ -106,8 +106,7 @@ export default function FirstSection () {
             <PairedInformation title='End date' text='3 Aug 2020' width='w-48' />
           </div>
         </div>
-        {/* WIP: fix problem when changing resolution */}
-        <div className="absolute h-[220px] w-[560px] -bottom-10 -right-56 -z-1 bg-[url('/svgs/backgroundPattern.svg')] bg-no-repeat hidden lg:block"></div>
+        <div className="absolute h-[220px] xl:w-[540px] -bottom-10 -right-40 -z-1 bg-[url('/svgs/backgroundPattern.svg')] bg-no-repeat hidden lg:block"></div>
       </div>
       {/* right info end */}
     </Section>
