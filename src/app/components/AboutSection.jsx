@@ -54,7 +54,7 @@ export default function AboutSection () {
             <strong className='text-5xl font-light text-[#535353]'>€31,300</strong>
           </div>
           <div className='flex-1'/>
-          <hr className="w-full h-[1px] mx-auto border-0 bg-[#DADADA]" />
+          <hr className="w-full h-[1px] mx-auto bg-[#DADADA]" />
           <div className='flex flex-col gap-10'>
             <div className='flex gap-10'>
               <PairedInformation title='Tuition covered' text='€20,900' />
@@ -96,9 +96,9 @@ export default function AboutSection () {
           </div>
           {/* center line */}
           <div className='flex items-center w-full md:w-full'>
-            <hr className="w-full h-[1px] mx-auto border-0 bg-[#DADADA]" />
+            <hr className="w-full h-[1px] mx-auto bg-[#DADADA]" />
             <strong className='font-medium text-base text-[#535353] px-6'>GRADUATION</strong>
-            <hr className="w-full h-[1px] mx-auto border-0 bg-[#DADADA]" />
+            <hr className="w-full h-[1px] mx-auto bg-[#DADADA]" />
           </div>
           {/* bottom */}
           <InformationBox
