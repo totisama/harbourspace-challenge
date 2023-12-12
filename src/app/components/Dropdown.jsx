@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FILTERS_NAME } from '../consts'
+import Image from 'next/image'
 
 export default function Dropdown () {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,9 +21,15 @@ export default function Dropdown () {
         onClick={() => setIsOpen(!isOpen)}
         className='w-full flex flex-col gap-x-3 border border-[#DADADA] bg-white py-4 px-4 gap-y-4 rounded-[20px] sm:py-2 sm:w-auto'
       >
-        <div className='w-full flex justify-between gap-x-3'>
+        <div className='w-full flex justify-between items-center gap-x-3'>
           <strong className='text-[#685DC5] font-medium text-lg'>Program conditions</strong>
-          <img src='/svgs/arrowBottom.svg' alt='arrow icon' />
+          <Image
+            className={`w-4 h-4 sm:w-3 ${!isOpen || 'rotate-180'} sm:h-3`}
+            src='/svgs/arrowBottom.svg'
+            alt='arrow icon'
+            width={1000}
+            height={1000}
+          />
         </div>
         {isOpen
           ? (
