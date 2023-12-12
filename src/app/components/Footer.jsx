@@ -1,4 +1,5 @@
 import { MONTHS } from '../consts'
+import Countdown from './Countdown'
 
 export default function Footer ({
   location,
@@ -37,10 +38,12 @@ export default function Footer ({
           <h2 className='text-[#535353] text-sm lg:text-base font-medium'>Application deadline</h2>
           <strong className='text-[#535353] text-sm lg:text-base font-light'>{formattedEndDate}</strong>
         </div>
-        <div className='flex flex-col'>
-          <h2 className='text-[#535353] text-sm lg:text-base font-medium'>Application closes in</h2>
-          <strong className='text-[#535353] text-sm lg:text-base font-light'>6 Day : 22 Hrs : 56 Min</strong>
-        </div>
+        <Countdown
+          containerClass={'flex flex-col'}
+          titleClass={'text-[#535353] text-sm lg:text-base font-medium'}
+          countdownClass={'text-[#535353] text-sm lg:text-base font-light'}
+          showSeconds={false}
+        />
       </div>
     </footer>
   )

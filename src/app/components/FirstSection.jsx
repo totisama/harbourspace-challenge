@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Section from './Section'
 import PairedInformation from './PairedInformation'
 import { MONTHS } from '../consts'
+import Countdown from './CountDown'
 
 export default async function FirstSection ({
   name,
@@ -43,10 +44,11 @@ export default async function FirstSection ({
               height={24}
             />
           </div>
-          <div className='border border-[#DADADA] rounded px-5 py-5 flex flex-col gap-y-2'>
-            <strong className='text-[#685DC5] font-medium text-[16px]'>Application closes in</strong>
-            <strong className='text-[#535353] font-light text-[20px]'>6 Day  :  22 Hrs  :  56 Min  :  13 Seg</strong>
-          </div>
+          <Countdown
+            containerClass={'border border-[#DADADA] bg-white rounded px-3 py-5 flex flex-col gap-y-1'}
+            titleClass={'text-[#685DC5] font-medium text-lg'}
+            countdownClass={'text-[#535353] font-light text-[27px]'}
+          />
           <div className='border border-[#DADADA] rounded px-5 py-5 flex flex-col gap-y-4'>
             <div className='flex justify-between'>
               <PairedInformation title='Location' text={location.name} width='w-48' />
@@ -106,10 +108,11 @@ export default async function FirstSection ({
             </strong>
           </div>
         </div>
-        <div className='border border-[#DADADA] bg-white rounded px-5 py-5 flex flex-col gap-y-1'>
-          <strong className='text-[#685DC5] font-medium text-lg'>Application closes in</strong>
-          <strong className='text-[#535353] font-light text-[27px]'>6 Day  :  22 Hrs  :  56 Min  :  13 Seg</strong>
-        </div>
+        <Countdown
+          containerClass={'border border-[#DADADA] bg-white rounded px-3 py-5 flex flex-col gap-y-1'}
+          titleClass={'text-[#685DC5] font-medium text-lg'}
+          countdownClass={'text-[#535353] font-light text-[27px]'}
+        />
         <div className='border border-[#DADADA] bg-white rounded px-5 py-10 flex flex-col z-10'>
           <div className='flex justify-between'>
             <PairedInformation title='Location' text={location.name} width='w-48' />
