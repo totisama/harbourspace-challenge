@@ -24,13 +24,13 @@ export default function FaqQuestion ({ question }) {
                 leaveTo="transform scale-80 opacity-0"
               >
                 <Disclosure.Panel as='div'>
-                  <div className='flex flex-col gap-y-5'>
+                  <div data-testid='question-text' className='flex flex-col gap-y-5'>
                     {getFormattedText(question.answer)}
                   </div>
                 </Disclosure.Panel>
               </Transition>
             </div>
-            <Disclosure.Button className='h-12 w-12 flex items-center justify-center rounded-[50%] border border-[#DADADA] hover:scale-95'>
+            <Disclosure.Button data-testid='button' className='h-12 w-12 flex items-center justify-center rounded-[50%] border border-[#DADADA] hover:scale-95'>
               {open
                 ? (
                     <span>-</span>

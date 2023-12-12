@@ -15,6 +15,7 @@ export default function Dropdown () {
     >
       <label className='flex text-[#6A6A6A] font-light text-base'>Filter by:</label>
       <motion.button
+        data-testid='button'
         whileTap={{ scale: 0.97 }}
         onClick={() => setIsOpen(!isOpen)}
         className='w-full flex flex-col gap-x-3 border border-[#DADADA] bg-white py-4 px-4 gap-y-4 rounded-[20px] sm:py-2 sm:w-auto'
@@ -26,6 +27,7 @@ export default function Dropdown () {
         {isOpen
           ? (
             <motion.ul
+              data-testid="dropdown-menu"
               className='w-full flex flex-col items-start gap-y-4'
             >
               {FILTERS_NAME.map(filter => (

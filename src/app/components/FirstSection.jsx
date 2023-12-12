@@ -1,13 +1,28 @@
 import Image from 'next/image'
 import Section from './Section'
 import PairedInformation from './PairedInformation'
+import { MONTHS } from '../consts'
+import Countdown from './Countdown'
 
-export default function FirstSection () {
+export default async function FirstSection ({
+  name,
+  description,
+  location,
+  duration,
+  scholarshipStartDate,
+  applicationEndDate,
+  whoShouldApplyText
+}) {
+  const startDate = new Date(scholarshipStartDate)
+  const formattedStartDate = `${startDate.getDate()} ${MONTHS[startDate.getMonth()]} ${startDate.getFullYear()}`
+  const endDate = new Date(applicationEndDate)
+  const formattedEndDate = `${endDate.getDate()} ${MONTHS[endDate.getMonth()]} ${endDate.getFullYear()}`
+
   return (
     <Section paddingX='px-6'>
       {/* left info start */}
       <div className="relative w-full flex flex-col gap-10 md:w-2/5">
-        <h1 className="text-5xl text-[#685dc5] font-medium">Interaction Design Apprenticeship</h1>
+        <h1 className="text-5xl text-[#685dc5] font-medium">{name}</h1>
 
         {/* mobile right info start */}
         <div className="flex flex-col gap-y-7 md:hidden">
@@ -29,18 +44,19 @@ export default function FirstSection () {
               height={24}
             />
           </div>
-          <div className='border border-[#DADADA] rounded px-5 py-5 flex flex-col gap-y-2'>
-            <strong className='text-[#685DC5] font-medium text-[16px]'>Application closes in</strong>
-            <strong className='text-[#535353] font-light text-[20px]'>6 Day  :  22 Hrs  :  56 Min  :  13 Seg</strong>
-          </div>
+          <Countdown
+            containerClass={'border border-[#DADADA] bg-white rounded px-3 py-5 flex flex-col gap-y-1'}
+            titleClass={'text-[#685DC5] font-medium text-lg'}
+            countdownClass={'text-[#535353] font-light text-[27px]'}
+          />
           <div className='border border-[#DADADA] rounded px-5 py-5 flex flex-col gap-y-4'>
             <div className='flex justify-between'>
-              <PairedInformation title='Location' text='Bangkok' width='w-48' />
-              <PairedInformation title='Duration' text='1 year Full-Time' width='w-48' />
+              <PairedInformation title='Location' text={location.name} width='w-48' />
+              <PairedInformation title='Duration' text={`${duration} year Full-Time`} width='w-48' />
             </div>
             <div className='flex justify-between'>
-              <PairedInformation title='Application deadline' text='30 June 2020' width='w-48' />
-              <PairedInformation title='Start date' text='3 Aug 2020' width='w-48' />
+              <PairedInformation title='Application deadline' text={formattedEndDate} width='w-48' />
+              <PairedInformation title='Start date' text={formattedStartDate} width='w-48' />
             </div>
           </div>
         </div>
@@ -48,13 +64,13 @@ export default function FirstSection () {
 
         <div className='flex flex-col gap-8'>
           <p className="text-[#535353] text-[22px] font-medium">A fully funded work-study program to launch your tech career</p>
-          <p className="text-[#535353] text-[22px] font-light">Harbour.Space has partnered with SCG to empower driven talent and eliminate the barriers to accessing exceptional education and career opportunities through a Masters Fellowship.</p>
-          <p className="block text-[#535353] text-[22px] font-light md:hidden">Scholarship candidates will receive full financial support to complete their Masters program at Harbour.Space while gaining invaluable work experience through an internship with SCG, a leading company in the industry.</p>
+          <p className="text-[#535353] text-[22px] font-light">{description.map(text => (text.data)).join('')}</p>
+          <p className="block text-[#535353] text-[22px] font-light md:hidden">{whoShouldApplyText.map(text => (text.data)).join('')}</p>
           <strong className='text-[22px] font-medium text-[#535353]'>
             Position:
             <span className='font-light text-[#535353]'>
               &nbsp;
-              Marketing Performance
+              {name}
             </span>
           </strong>
         </div>
@@ -92,18 +108,19 @@ export default function FirstSection () {
             </strong>
           </div>
         </div>
-        <div className='border border-[#DADADA] bg-white rounded px-5 py-5 flex flex-col gap-y-1'>
-          <strong className='text-[#685DC5] font-medium text-lg'>Application closes in</strong>
-          <strong className='text-[#535353] font-light text-[27px]'>6 Day  :  22 Hrs  :  56 Min  :  13 Seg</strong>
-        </div>
+        <Countdown
+          containerClass={'border border-[#DADADA] bg-white rounded px-3 py-5 flex flex-col gap-y-1'}
+          titleClass={'text-[#685DC5] font-medium text-lg'}
+          countdownClass={'text-[#535353] font-light text-[27px]'}
+        />
         <div className='border border-[#DADADA] bg-white rounded px-5 py-10 flex flex-col z-10'>
           <div className='flex justify-between'>
-            <PairedInformation title='Location' text='Bangkok' width='w-48' />
-            <PairedInformation title='Duration' text='1 year' width='w-48' extra={true} extraText='Full-Time' />
+            <PairedInformation title='Location' text={location.name} width='w-48' />
+            <PairedInformation title='Duration' text={`${duration} year`} width='w-48' extra={true} extraText='Full-Time' />
           </div>
           <div className='flex justify-between'>
-            <PairedInformation title='Start date' text='30 June 2020' width='w-48' />
-            <PairedInformation title='End date' text='3 Aug 2020' width='w-48' />
+            <PairedInformation title='Start date' text={formattedStartDate} width='w-48' />
+            <PairedInformation title='End date' text={formattedEndDate} width='w-48' />
           </div>
         </div>
         <div className="absolute h-[220px] xl:w-[540px] -bottom-10 -right-40 -z-1 bg-[url('/svgs/backgroundPattern.svg')] bg-no-repeat hidden lg:block"></div>
