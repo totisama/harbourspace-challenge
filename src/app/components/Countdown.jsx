@@ -44,8 +44,8 @@ export default function Countdown ({ containerClass, titleClass, countdownClass,
 
   return (
     <div className={containerClass}>
-      <strong className={titleClass}>Application closes in</strong>
-      <strong className={countdownClass}>{date}</strong>
+      <strong data-testid='title' className={titleClass}>Application closes in</strong>
+      <strong data-testid='countdown' className={countdownClass}>{date}</strong>
     </div>
   )
 }
