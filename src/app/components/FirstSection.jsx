@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Section from './Section'
 import PairedInformation from './PairedInformation'
 import { MONTHS } from '../consts'
-import Countdown from './CountDown'
+import Countdown from './Countdown'
 
 export default async function FirstSection ({
   name,
