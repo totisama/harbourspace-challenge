@@ -81,7 +81,7 @@ export default function SliderSection () {
 
   return (
     <Section limitWidth={false}>
-      <div className="relative w-full h-auto flex flex-col justify-center items-center py-10 px-4 md:px-0">
+      <div className="relative w-full h-auto flex flex-col justify-center items-center px-4 md:px-0">
         <div className={`w-full h-auto select-none py-10 whitespace-nowrap justify-center overflow-hidden ${isDown ? 'cursor-grabbing' : 'cursor-grab'}`}
           ref={itemsContainer}
           onMouseDown={(e) => handleMouseDown(e)}

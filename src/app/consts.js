@@ -87,7 +87,7 @@ export const QUESTIONS = [
   },
   {
     type: 'Apprenticeship conditions',
-    question: 'Will I get aa visa?',
+    question: 'Will I get a visa?',
     answer: [
       {
         type: 'paragraph',
@@ -115,6 +115,14 @@ export const QUESTIONS = [
       }
     ]
   }
+]
+
+export const FILTERS_NAME = [
+  'All',
+  'Admissions',
+  'Harbour.Space',
+  'SCG',
+  'Living in Bangkok'
 ]
 
 export const ITEM_MARGIN_RIGTH = 40
