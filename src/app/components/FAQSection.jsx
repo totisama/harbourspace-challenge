@@ -1,9 +1,8 @@
 import Section from './Section'
-import { QUESTIONS } from '../consts'
 import FaqQuestion from './FaqQuestion'
 import Dropdown from './Dropdown'
 
-export default function FAQSection () {
+export default function FAQSection ({ questions }) {
   return (
     <Section flexDirection='flex-col' paddingX='px-10' extra='gap-y-10' >
       <div className='w-full flex flex-col justify-start md:justify-between gap-y-5 md:flex-row md:gap-y-0'>
@@ -12,7 +11,7 @@ export default function FAQSection () {
       </div>
       <hr className='w-full h-[1px] mx-auto bg-[#DADADA]' />
       <div className='flex flex-col gap-y-5'>
-        {QUESTIONS.map((question, index) => (
+        {questions.map((question, index) => (
           <FaqQuestion key={index} question={question} />
         ))}
       </div>
