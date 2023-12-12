@@ -130,3 +130,5 @@ export const ITEM_MARGIN_RIGTH = 40
 export const MOVING_RATE = 10
 
 export const SLIDER_START = 10
+
+export const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
