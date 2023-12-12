@@ -5,9 +5,20 @@ import Footer from './components/Footer'
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['100', '300', '400', '500', '700', '900'] })
 
+const req = await fetch('https://pre-prod.harbour.space/api/v1/scholarship_pages/data-science-apprenticeship-zeptolab')
+const {
+  scholarship: {
+    name, location, duration, scholarship_start_date: scholarshipStartDate, application_end_date: applicationEndDate
+  },
+  meta: {
+    title,
+    description
+  }
+} = await req.json()
+
 export const metadata = {
-  title: 'Interaction Design Apprenticeship',
-  description: 'A fully funded work-study program to launch your tech career'
+  title,
+  description
 }
 
 export default function RootLayout ({ children }) {
@@ -16,7 +27,7 @@ export default function RootLayout ({ children }) {
       <body className={roboto.className}>
         <Header />
         {children}
-        <Footer />
+        <Footer name={name} location={location} duration={duration} scholarshipStartDate={scholarshipStartDate} applicationEndDate={applicationEndDate} />
       </body>
     </html>
   )
