@@ -3,7 +3,15 @@ import Section from './Section'
 import InformationBox from './InformationBox'
 import PairedInformation from './PairedInformation'
 
-export default function AboutSection () {
+export default function AboutSection ({
+  about, total, tuition, remaining, stipendPerMonth, stipendPerYear,
+  studyCommitment, internshipCommitment, studyCommitmentText, internshipCommitmentText
+}) {
+  const totalFormatted = new Intl.NumberFormat().format(total)
+  const tuitionFormatted = new Intl.NumberFormat().format(tuition)
+  const stipendPerMonthFormatted = new Intl.NumberFormat().format(stipendPerMonth)
+  const stipendPerYearFormatted = new Intl.NumberFormat().format(stipendPerYear)
+
   return (
     <Section flexDirection='flex-col' paddingX='px-0'>
       <div className="w-11/12 px-6 hidden sm:flex flex-col items-center gap-10 lg:gap-32 lg:flex-row">
@@ -21,7 +29,7 @@ export default function AboutSection () {
         </div>
         <div className='flex flex-col gap-y-10'>
           <h2 className='font-medium text-5xl text-[#685DC5]'>About the apprenticeship</h2>
-          <p className='font-light text-[22px] text-[#535353]'>Our scholarships are designed to give talented and driven young people from any background access to top-class education, experience and network. We offer a fully-funded master’s degree alongside an apprenticeship and a guaranteed job upon graduation.</p>
+          <p className='font-light text-[22px] text-[#535353]'>{about.map(text => (text.data)).join('')}</p>
         </div>
       </div>
 
@@ -48,19 +56,19 @@ export default function AboutSection () {
       <div className='w-full px-6 flex flex-col md:flex-row mt-10 md:mt-20 gap-10'>
 
         {/* left */}
-        <div className='w-1/3 border hidden flex-col border-[#DADADA] justify-end rounded pt-5 pb-10 px-10 gap-y-7 md:flex'>
+        <div className='w-1/3 border hidden flex-col border-[#DADADA] justify-end rounded pt-5 pb-7 px-10 gap-y-7 md:flex'>
           <div className='flex flex-col gap-y-5'>
             <strong className='text-base font-medium text-[#685DC5]'>Scholarship value</strong>
-            <strong className='text-5xl font-light text-[#535353]'>€31,300</strong>
+            <strong className='text-5xl font-light text-[#535353]'>{`€${totalFormatted}`}</strong>
           </div>
           <div className='flex-1'/>
           <hr className="w-full h-[1px] mx-auto bg-[#DADADA]" />
           <div className='flex flex-col gap-10'>
             <div className='flex gap-10'>
-              <PairedInformation title='Tuition covered' text='€20,900' />
-              <PairedInformation title='Remaining' text='€2,000' />
+              <PairedInformation title='Tuition covered' text={`€${tuitionFormatted}`} />
+              <PairedInformation title='Remaining' text={`€${remaining}`} />
             </div>
-            <PairedInformation title='Living stipend' text='€8,400 (€700/month)' />
+            <PairedInformation title='Living stipend' text={`€${stipendPerYearFormatted} (€${stipendPerMonthFormatted}/month)`} />
           </div>
         </div>
 
@@ -68,13 +76,13 @@ export default function AboutSection () {
         <div className='flex flex-col gap-y-5 items-baseline pl-10 md:hidden'>
           <div className='flex flex-col'>
             <strong className='text-base font-medium text-[#685DC5]'>Fellowship value</strong>
-            <strong className='text-2xl font-light text-[#535353]'>€31,300</strong>
+            <strong className='text-2xl font-light text-[#535353]'>{`€${totalFormatted}`}</strong>
           </div>
           <div className='flex gap-10'>
-            <PairedInformation title='Tuition' text='€22,900' textSize='text-2xl' />
-            <PairedInformation title='Remaining' text='€8,400' textSize='text-2xl' />
+            <PairedInformation title='Tuition' text={`€${tuitionFormatted}`} textSize='text-2xl' />
+            <PairedInformation title='Remaining' text={`€${remaining}`} textSize='text-2xl' />
           </div>
-          <PairedInformation title='Living stipend' text='€8,400 (€700/month)' textSize='text-2xl' />
+          <PairedInformation title='Living stipend' text={`€${stipendPerYearFormatted} (€${stipendPerMonthFormatted}/month)`} textSize='text-2xl' />
         </div>
 
         {/* right */}
@@ -83,14 +91,14 @@ export default function AboutSection () {
           <div className='w-full flex flex-col md:flex-row gap-10'>
             <InformationBox
               title='Study commitment'
-              info='3 hours / day'
-              text='You will complete 15 modules to graduate. Daily classes are 3 hours, plus coursework to complete in your own time.'
+              info={`${studyCommitment} hours / day`}
+              text={studyCommitmentText}
               width='w-full md:w-1/2'
             />
             <InformationBox
-              title='Work commitment'
-              info='4 hours / day'
-              text='Immerse yourself in the professional world during your apprenticeship. You’ll learn the ropes from the best and get to apply your newly acquired knowledge in the field from day one.'
+              title='Internship commitment'
+              info={`${internshipCommitment} hours / day`}
+              text={internshipCommitmentText}
               width='w-full md:w-1/2'
             />
           </div>

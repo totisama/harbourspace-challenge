@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import Section from './Section'
 import SliderItem from './SliderItem'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { ITEM_MARGIN_RIGTH, MOVING_RATE, SLIDER_START } from '../consts'
 
 export default function SliderSection () {
@@ -81,7 +82,7 @@ export default function SliderSection () {
 
   return (
     <Section limitWidth={false}>
-      <div className="relative w-full h-auto flex flex-col justify-center items-center py-10 px-4 md:px-0">
+      <div className="relative w-full h-auto flex flex-col justify-center items-center px-4 md:px-0">
         <div className={`w-full h-auto select-none py-10 whitespace-nowrap justify-center overflow-hidden ${isDown ? 'cursor-grabbing' : 'cursor-grab'}`}
           ref={itemsContainer}
           onMouseDown={(e) => handleMouseDown(e)}
@@ -105,19 +106,41 @@ export default function SliderSection () {
         {/* arrow buttons small */}
         <div className='w-full flex justify-end gap-x-3 md:hidden'>
           <button className='h-12 w-12 border flex justify-center items-center rounded-full' onClick={() => moveSlider((itemWidth.current + ITEM_MARGIN_RIGTH) * MOVING_RATE)}>
-            <img src='/svgs/arrowLeft.svg' alt='left arrow' />
+            <Image
+              src='/svgs/arrowLeft.svg'
+              alt='left arrow'
+              width={1000}
+              height={1000}
+            />
           </button>
           <button className='h-12 w-12 border flex justify-center items-center rounded-full' onClick={() => moveSlider(-(itemWidth.current + ITEM_MARGIN_RIGTH) * MOVING_RATE)}>
-            <img src='/svgs/arrowRight.svg' alt='right arrow' />
+            <Image
+              className='w-4 h-4'
+              src='/svgs/arrowRight.svg'
+              alt='right arrow'
+              width={1000}
+              height={1000}
+            />
           </button>
         </div>
 
         {/* arrow buttons desktop */}
         <button className='absolute h-12 w-12 -translate-x-1/2 -translate-y-1/2 bg-white left-10 border hidden justify-center items-center rounded-full md:flex' onClick={() => moveSlider((itemWidth.current + ITEM_MARGIN_RIGTH) * MOVING_RATE)}>
-          <img src='/svgs/arrowLeft.svg' alt='left arrow' />
+          <Image
+            src='/svgs/arrowLeft.svg'
+            alt='left arrow'
+            width={1000}
+            height={1000}
+          />
         </button>
         <button className='absolute h-12 w-12 -translate-x-1/2 -translate-y-1/2 bg-white right-0 border hidden justify-center items-center rounded-full md:flex' onClick={() => moveSlider(-(itemWidth.current + ITEM_MARGIN_RIGTH) * MOVING_RATE)}>
-          <img src='/svgs/arrowRight.svg' alt='right arrow' />
+          <Image
+            className='w-4 h-4'
+            src='/svgs/arrowRight.svg'
+            alt='right arrow'
+            width={1000}
+            height={1000}
+          />
         </button>
 
         {/* images */}

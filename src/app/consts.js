@@ -87,7 +87,7 @@ export const QUESTIONS = [
   },
   {
     type: 'Apprenticeship conditions',
-    question: 'Will I get aa visa?',
+    question: 'Will I get a visa?',
     answer: [
       {
         type: 'paragraph',
@@ -117,8 +117,28 @@ export const QUESTIONS = [
   }
 ]
 
+export const FILTERS_NAME = [
+  'All',
+  'Admissions',
+  'Harbour.Space',
+  'SCG',
+  'Living in Bangkok'
+]
+
 export const ITEM_MARGIN_RIGTH = 40
 
 export const MOVING_RATE = 10
 
 export const SLIDER_START = 10
+
+export const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+export const SECONDS = 1000
+
+export const MINUTE = SECONDS * 60
+
+export const HOUR = MINUTE * 60
+
+export const DAY = HOUR * 24
+
+export const INITIAL_DATE = '- Day : - Hr : - Min : - Seg'
